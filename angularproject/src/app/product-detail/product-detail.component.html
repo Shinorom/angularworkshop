@@ -28,8 +28,11 @@
       <button *ngIf="selectedProduct.qty"
       class="btn btn-info"
       (click)="addCart()">เพิ่มลงตะกร้า</button>
-      </div>  
-      <app-product-cart [addProduct]="addProduct"></app-product-cart>
+      </div>
+      <div class="col-6">
+
+          <app-product-cart [addProduct]="addProduct"></app-product-cart>
+      </div>
 
 </div>
     
