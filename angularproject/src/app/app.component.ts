@@ -6,50 +6,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name : string = 'June';
-  score : number = 49;
-
-  student:any = {
-    name : "June",
-    studentID : "5921602485",
-    weight : 55,
-    height : 175,
-  }
-  
-  studentList:any = [{
-    name : "Pang",
-    studentID : "5921602612",
-    weight : 40,
-    height : 150,
+  productList:any = [{
+    pId : "0001",
+    pName : "แปลงสีฟัน",
+    pCost : 50,
   },
   {
-    name : "Mo",
-    studentID : "5921602779",
-    weight : 54,
-    height : 159,
-    
+    pId : "0002",
+    pName : "ยาสีฟัน",
+    pCost : 69,
   },
   {
-    name : "June",
-    studentID : "5921602485",
-    weight : 55,
-    height : 175,
+    pId : "0003",
+    pName : "แก้วน้ำ",
+    pCost : 25,
   }
 ];
 
+selectedProduct:any;
 
-  constructor(){
-    this.student.bmi=(this.student.weight/
-    ((this.student.height/100)*(this.student.height/100))).toFixed(2);
-  
-    this.studentList.map((object,index)=>{
-      let obj:any = object;
-      obj.bmi = (object.weight/((object.height/100)*(object.height/100))).toFixed(2);
-      return obj;
-   })
-  
-    console.log(this.studentList);
+selectProduct(p){
+  this.selectedProduct = p;
 
 }
+
+  constructor(){
+    
+}
+
 
 }
