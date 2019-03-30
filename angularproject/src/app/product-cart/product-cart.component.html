@@ -1,13 +1,13 @@
 
 
   <table class="table">
-    <thead class="thead-dark">
+    <thead class="bg-danger">
       <tr>
         <th>รหัสสินค้า</th>
         <th>ชื่อสินค้า</th>
-        <th>ราคา</th>
-        <th>จำนวนที่เลือก</th>
-      
+        <th>ราคาสินค้า</th>
+        <th>จำนวนที่ต้องการ</th>
+        <th>ราคารวม</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +16,7 @@
         <td>{{c.pName}}</td>
         <td>{{c.pCost}}</td>
         <td>{{c.qty}}</td>
+        <td>{{c.qty*c.pCost}}</td>
       </tr>
       
     </tbody>
