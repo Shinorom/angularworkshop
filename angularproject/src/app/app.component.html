@@ -1,58 +1,31 @@
-<div class="input-group">
-  <div class="input-group-prepend">
-    <button class="btn btn-success" type="button">ชื่อ</button>
-  </div>
-  <input type="text" class="form-control" [(ngModel)] = "name" placeholder="" aria-label=""aria-describedby="basic-addon1">
+<div class="container">
+    หาผลคูณ
+    <div class="row">   
+        <div class="col-5"> 
+            <div class="input-group input-group-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">ค่าที่ 1</span>
+                </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+        [(ngModel)]="request.key1">
+      </div>
+    </div>
+
+<div class="col-5"> 
+    <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">ค่าที่ 2</span>
+            </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+        [(ngModel)]="request.key2">
+    </div>
 </div>
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <button class="btn btn-success" type="button">คะแนน</button>
-  </div>
-  <input type="text" class="form-control" [(ngModel)] = "score" placeholder="" aria-label="" aria-describedby="basic-addon1">
+<div class="col-2"> 
+    <button class="btn btn-success" (click)="getData()">คำนวณ</button>
 </div>
-
-
-<router-outlet></router-outlet>
-
-สวัสดี {{name}} <br>
-คะแนน {{score}} <br>
-<span *ngIf="score>=50">เกรด A</span>
-<span *ngIf="score<50">เกรด F</span>
-
-<hr>
-<h3 class="text-center">รายชื่อนักเรียน</h3>
-<table class="table">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Student Name</th>
-      <th>Weight</th>
-      <th>Height</th>
-      <th>BMI</th>
-      <th>ผลลัพธ์</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- <tr>
-      <td> {{student.studentID}} </td>
-      <td>{{student.name}} </td>
-      <td>{{student.weight}}</td>
-      <td>{{student.height}}</td>
-      <td>{{student.bmi}}</td>
-      <td *ngIf="student.bmi>25">อ้วน<td>
-      <td *ngIf="student.bmi==20">ปกติ<td>
-      <td *ngIf="student.bmi<25">ผอม<td>
-    </tr> -->
-    <tr *ngFor = "let s of studentList"> 
-      <td> {{s.studentID}} </td>
-      <td>{{s.name}} </td>
-      <td>{{s.weight}}</td>
-      <td>{{s.height}}</td>
-      <td>{{s.bmi}}</td>
-      <td *ngIf="s.bmi>25">อ้วน</td>
-      <td *ngIf="s.bmi==25">ปกติ</td>
-      <td *ngIf="s.bmi<25">ผอม</td>
-      </tr>
-  </tbody>
-</table>
+</div>
+<span class="badge badge-danger">ผลลัพธ์</span>
+{{result}} {{status}}
+</div>
+    
